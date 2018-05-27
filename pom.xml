@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.imarcats.opensource</groupId>
+  <artifactId>market-system</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+  <name>iMarcats Market System (Open Source)</name>
+  <url>http://imarcats.com</url>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <imarcats.market.system.version>0.0.1-SNAPSHOT</imarcats.market.system.version>
+    
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    
+    <!-- Convenience property to set the GWT version -->
+    <gwtVersion>2.8.0-beta1</gwtVersion>
+  </properties>
+  
+  <repositories>
+    <!-- other repositories -->
+    <repository>
+        <id>smartgwt</id>
+        <url>http://www.smartclient.com/maven2</url>
+    </repository>
+    <repository>
+    	<id>spring-milestones</id>
+   		<url>http://repo.spring.io/libs-milestone/</url>
+  	</repository>
+  	<repository>
+	 	<id>clojars.org</id>
+	 	<url>http://clojars.org/repo</url>
+  	</repository>
+  </repositories>
+  
+  <modules>
+    <module>marketmodel</module>
+    <module>market-interfaces</module>
+    <module>market-i18n</module>
+    <module>market-internal-infrastructure</module>
+    <module>market-engine</module>
+    <module>market-engine-test</module>
+    <module>market-management</module>
+    <module>market-management-test</module>
+    <module>market-test-base</module>
+    <module>market-mock-datastores</module>
+  </modules>
+
+
+</project>
