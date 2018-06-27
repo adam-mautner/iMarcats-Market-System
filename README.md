@@ -1,9 +1,9 @@
 # iMarcats-Market-System
 Framework for stock, commodity or any other marketplaces 
 
-##Using Market System Java API 
+## Using Market System Java API 
 
-###1) Implement the following datastores e.g. using JPA (note market model implementation assumes that JPA will be used)
+### 1) Implement the following datastores e.g. using JPA (note market model implementation assumes that JPA will be used)
 AssetClassDatastore 
 ProductDatastore 
 InstrumentDatastore 
@@ -12,14 +12,14 @@ MarketDatastore
 AuditTrailEntryDatastore  
 MatchedTradeDatastore
 
-###2) Implement the MarketTimer e.g. using Quartz 
+### 2) Implement the MarketTimer e.g. using Quartz 
 
-###3) Implement contexts 
+### 3) Implement contexts 
 MarketDataSession 
 PropertyChangeSession 
 TradeNotificationSession
 
-###4) Instantiate market administration system 
+### 4) Instantiate market administration system 
 
 		MarketManagementAdminSystem adminSystem = 
     		new MarketManagementAdminSystem(assetClassDatastore_, 
@@ -31,11 +31,11 @@ TradeNotificationSession
 			matchedTradeDatastore_,
 			marketTimer_);
     	 
-##Market Management using Java 
+## Market Management using Java 
 
-###Asset Class (needed for Product)
+### Asset Class (needed for Product)
 
-###Simple Asset Class 
+### Simple Asset Class 
 
 		AssetClassDto assetClass = new AssetClassDto();
     	String assetClassName = "MY_ASSET_CLASS_1";
@@ -44,7 +44,7 @@ TradeNotificationSession
     	
     	adminSystem.createAssetClass(assetClass, "Adam");
 
-###Hierarchical Asset Class (setting asset class 1 as parent)
+### Hierarchical Asset Class (setting asset class 1 as parent)
 
 		AssetClass assetClass2 = createAssetClass();
     	String assetClassCode2 = "TEST_TEST_TEST";
@@ -53,12 +53,12 @@ TradeNotificationSession
 
     	adminSystem.createAssetClass(assetClass, "Adam");
 
-###Change Asset Class 
+### Change Asset Class 
 
 		assetClass1.setDescription("Test 2222");
 		adminSystem.changeAssetClass(assetClass1, "Adam");
 
-###Delete Asset Class (note parent cannot be deleted before the child)
+### Delete Asset Class (note parent cannot be deleted before the child)
 
 		MarketManagementContextImpl context = new 			MarketManagementContextImpl(
 				marketDataSession, propertyChangeSession,
@@ -66,9 +66,9 @@ TradeNotificationSession
 
     	adminSystem.deleteAssetClass(assetClass2.getName(), user, context);
 
-##Product (needed for Instrument)
+## Product (needed for Instrument)
 
-###Create Product 
+### Create Product 
 
 		String productCode1 = "MYPROD";
 
@@ -81,26 +81,26 @@ TradeNotificationSession
 
 		adminSystem.createProduct(product, "Adam");
 
-###Approve Product 
+### Approve Product 
 
 		adminSystem.approveProduct(productCode1, new Date(), "Adam");
 
-###Suspend Product (note product can only be suspended, if the dependent objects are suspended)
+### Suspend Product (note product can only be suspended, if the dependent objects are suspended)
 
 		adminSystem.suspendProduct(productCode1, user);
 
-###Change Product (note it has to be suspended first)
+### Change Product (note it has to be suspended first)
 
 		product1.setDescription("TestChange");
 		adminSystem.changeProduct(product1, "Adam");
 
-###Delete Product (note product can only be deleted, if the dependent objects are deleted)
+### Delete Product (note product can only be deleted, if the dependent objects are deleted)
 
 		adminSystem.deleteProduct(productCode1, "Adam", context);
 
-##Instrument (needed for the market)
+## Instrument (needed for the market)
 
-###Create Instrument (note instrument has to have an underlying a product or another instrument)
+### Create Instrument (note instrument has to have an underlying a product or another instrument)
 
 		String instrumentCode1 = "MYTESTINSTR"; 
 		
@@ -130,27 +130,27 @@ TradeNotificationSession
 		
 		adminSystem.createInstrument(instrument, "Adam"); 
 
-###Approve Instrument (note instrument can only be approved, if the underlying is approved)
+### Approve Instrument (note instrument can only be approved, if the underlying is approved)
 
 		adminSystem.approveInstrument(instrumentCode1, new Date(), "Adam");
 
-###Suspend Instrument (note instrument can only be suspended, if the dependent objects are suspended)
+### Suspend Instrument (note instrument can only be suspended, if the dependent objects are suspended)
 
 		adminSystem.suspendInstrument(instrumentCode1, "Adam");
 
-###Change Instrument 
+### Change Instrument 
 
 		instrument1.setMasterAgreementDocument("test2");
 		
 		adminSystem.changeInstrument(instrument1, "Adam");
 
-###Delete Instrument (note product can only be deleted, if the dependent objects are deleted)
+### Delete Instrument (note product can only be deleted, if the dependent objects are deleted)
 
 		adminSystem.deleteInstrument(instrumentCode, "Adam", context);
 
-##Market Operator (needed for the market)
+## Market Operator (needed for the market)
 
-###Create Market Operator 
+### Create Market Operator 
 
     	String mktOptCode1 = "MYTESTKKTOPT"; 
 		MarketOperatorDto mktOperator1 = new MarketOperatorDto();
@@ -166,29 +166,29 @@ TradeNotificationSession
 		
 		adminSystem.createMarketOperator(mktOpt, "Adam"); 
 
-###Approve Market Operator 
+### Approve Market Operator 
     	
     	mktOpt1.setMarketOperatorAgreement("Test");
     	adminSystem.approveMarketOperator(mktOptCode1, new Date(), "Adam");
     	
-###Suspend Market Operator 
+### Suspend Market Operator 
 
 		adminSystem.suspendMarketOperator(mktOptCode, "Adam");
 
-###Change Market Operator 
+### Change Market Operator 
 
 		String ownerUserID = "ownerUserID1"; 
 		mktOpt1.setOwnerUserID(ownerUserID);
 		
 		adminSystem.changeMarketOperator(mktOptChanged, "Adam");
 
-###Delete Market Operator
+### Delete Market Operator
 
 		adminSystem.deleteMarketOperator(mktOptCode, "Adam", context);
 
-##Market
+## Market
 
-###Create Market  
+### Create Market  
 
 		BusinessCalendar calendar = new BusinessCalendar();
 		
@@ -258,17 +258,17 @@ TradeNotificationSession
 
 		adminSystem.createMarket(market, "Adam", context); 
 
-###Approve Market  (note market can only be approved, if the underlying instrument and market operator are approved)
+### Approve Market  (note market can only be approved, if the underlying instrument and market operator are approved)
 
 		market.setMarketOperationContract("test contract");
 		
 		adminSystem.approveMarket(marketCode, new Date(), "Adam", context);
 
-###Activate Continuous Market
+### Activate Continuous Market
 
 		managementSystem.activateMarket(marketCode, "Adam", context);
 
-###Activate Call Market 
+### Activate Call Market 
 
     	GregorianCalendar nowCalendar = new GregorianCalendar();
     	// this is set to a fixed date to avoid problems when we switch to day light saving
@@ -282,30 +282,30 @@ TradeNotificationSession
 		    	
 		managementSystem.activateCallMarket(marketCode, scheduledDateTime, MarketDtoMapping.INSTANCE.toDto(scheduledTimeOfDay), "Adam", context);    	
 
-###Emergency Close Market
+### Emergency Close Market
 
 		managementSystem.emergencyCloseMarket(marketCode, "Adam", context);
 
-###Deactivate Market
+### Deactivate Market
 
 		adminSystem.suspendMarket(marketCode, "Adam", context);
 
-###Suspend Market 
+### Suspend Market 
 
 		adminSystem.suspendMarket(marketCode, "Adam", context);
 
-###Change Market 
+### Change Market 
 
 		market.setBusinessEntityCode("Test_BE");
     	adminSystem.changeMarket(market, "Adam", context);
 
-###Delete Market 
+### Delete Market 
 
 		adminSystem.deleteMarket(marketCode, user, context);
 		
-##Order Management using Java 
+## Order Management using Java 
 
-###Instantiate Order Management System
+### Instantiate Order Management System
 
 		OrderManagementSystem orderManagementSystem = new OrderManagementSystem(marketDatastore, 
 			orderDatastore,
@@ -313,7 +313,7 @@ TradeNotificationSession
 			orderSubmitExecutor_, 
 			orderCancelExecutor);
 
-###Create Order 
+### Create Order 
 
 		Order order = new Order();
 		
@@ -336,14 +336,14 @@ TradeNotificationSession
 
 		orderManagementSystem.createOrder(marketCode, order, "Adam", context);
 
-###Submit Order 
+### Submit Order 
 
 		orderManagementSystem.submitOrder(order.getKey(), "Adam", context);
 
-###Cancel Order 
+### Cancel Order 
 
 		orderManagementSystem.cancelOrder(order.getKey(), "Adam", context);
 
-###Delete Order
+### Delete Order
 
 		orderManagementSystem.deleteOrder(order.getKey(), "Adam", context);
