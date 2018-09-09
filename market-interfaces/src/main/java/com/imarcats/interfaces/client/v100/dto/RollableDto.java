@@ -3,6 +3,7 @@ package com.imarcats.interfaces.client.v100.dto;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.imarcats.interfaces.client.v100.dto.types.AuditInformationDto;
 import com.imarcats.interfaces.client.v100.dto.types.PropertyDto;
 import com.imarcats.interfaces.client.v100.dto.types.UnderlyingType;
@@ -31,6 +32,7 @@ public interface RollableDto extends ActivatableMarketObjectDto {
 	/**
 	 * @return Code of the Object this Object was rolled from 
 	 */
+	@JsonIgnore
 	public String getCodeRolledFrom();
 
 	/**

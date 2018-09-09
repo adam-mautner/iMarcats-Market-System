@@ -2,6 +2,7 @@ package com.imarcats.interfaces.client.v100.dto;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.imarcats.interfaces.client.v100.dto.types.ActivationStatus;
 import com.imarcats.interfaces.client.v100.dto.types.AuditInformationDto;
 
@@ -16,6 +17,7 @@ public interface ActivatableMarketObjectDto extends MarketModelObjectDto {
 	/**
 	 * @return Code of the Object
 	 */
+	@JsonIgnore
 	public String getCode();
 
 	/**
