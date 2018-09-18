@@ -382,6 +382,18 @@ public class MockDatastoresBase implements
 	}
 
 	@Override
+	public PagedMarketList findAllMarketModelsFromCursor(
+			String cursorString_,
+			int maxNumberOfMarketsOnPage_) {
+		List<Market> markets = _mapCodeToMarket.values().stream().collect(Collectors.toList());
+		
+		PagedMarketList marketList = new PagedMarketList();
+		marketList.setMarkets(markets.toArray(new Market[markets.size()]));
+		
+		return marketList;
+	}
+	
+	@Override
 	public Market[] findMarketModelsByMarketOperator(
 			String marketOperatorCode_) {
 		List<Market> markets = _mapCodeToMarket.values().stream().filter(market -> marketOperatorCode_.equals(market.getMarketOperatorCode())).collect(Collectors.toList());
@@ -476,6 +488,18 @@ public class MockDatastoresBase implements
 		return list;
 	}
 	
+	@Override
+	public PagedMarketOperatorList findAllMarketOperatorsFromCursor(
+			String cursorString_,
+			int maxNumberOfMarketOperatorsOnPage_) {
+		List<MarketOperator> marketOperatorsFound = _mapCodeToMarketOperator.values().stream().collect(Collectors.toList());
+		
+		PagedMarketOperatorList list = createPagedMarketOperatorList(
+				cursorString_, maxNumberOfMarketOperatorsOnPage_,
+				marketOperatorsFound);
+		
+		return list;
+	}
 	// Order
 	@Override
 	public Long createOrder(Order orderModel_) {

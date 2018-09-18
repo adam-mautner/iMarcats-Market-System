@@ -86,14 +86,15 @@ public class MarketOperatorValidatorTest extends ManagementTestBase {
 	
 	public void testNewValidation() throws Exception {
 		MarketOperator marketOperator = createMarketOperator("TEST_CODE");
-		
-		try {
-			MarketOperatorValidator.validateNewMarketOperator(marketOperator);
-			fail();
-		} catch (MarketRuntimeException e) {
-			assertEquals(ExceptionLanguageKeys.NEW_MARKET_OPERATOR_MUST_NOT_HAVE_MARKET_OPERATOR_AGREEMENT, e.getLanguageKey());
-		}
-		marketOperator.setMarketOperatorAgreement(null);
+
+		// we have removed this check to make market operator creation single step 
+//		try {
+//			MarketOperatorValidator.validateNewMarketOperator(marketOperator);
+//			fail();
+//		} catch (MarketRuntimeException e) {
+//			assertEquals(ExceptionLanguageKeys.NEW_MARKET_OPERATOR_MUST_NOT_HAVE_MARKET_OPERATOR_AGREEMENT, e.getLanguageKey());
+//		}
+//		marketOperator.setMarketOperatorAgreement(null);
 		
 		try {
 			MarketOperatorValidator.validateNewMarketOperator(marketOperator);

@@ -47,14 +47,16 @@ public class InstrumentValidator {
 	private static void validateNewInstrumentInternal(Instrument instrument_) {
 		validateInstrumentBasics(instrument_);
 		
-		if(ValidatorUtils.isValidObjectIdString(instrument_.getAssetClassName())) {
-			throw MarketRuntimeException.createExceptionWithDetails(MarketRuntimeException.NEW_INSTRUMENT_MUST_NOT_HAVE_ASSET_CLASS_NAME, 
-					null, new Object[] { instrument_.getInstrumentCode(), DataUtils.VALID_ID });	
-		}
-		if(ValidatorUtils.isValidString(instrument_.getMasterAgreementDocument())) {			
-			throw MarketRuntimeException.createExceptionWithDetails(MarketRuntimeException.NEW_INSTRUMENT_MUST_NOT_HAVE_MASTER_AGREEMENT_DOCUMENT, 
-				null, new Object[] { instrument_.getInstrumentCode() });	
-		}
+		// we have removed this check to make instrument creation single step 
+//		if(ValidatorUtils.isValidObjectIdString(instrument_.getAssetClassName())) {
+//			throw MarketRuntimeException.createExceptionWithDetails(MarketRuntimeException.NEW_INSTRUMENT_MUST_NOT_HAVE_ASSET_CLASS_NAME, 
+//					null, new Object[] { instrument_.getInstrumentCode(), DataUtils.VALID_ID });	
+//		}
+		// we have removed this check to make instrument creation single step 
+//		if(ValidatorUtils.isValidString(instrument_.getMasterAgreementDocument())) {			
+//			throw MarketRuntimeException.createExceptionWithDetails(MarketRuntimeException.NEW_INSTRUMENT_MUST_NOT_HAVE_MASTER_AGREEMENT_DOCUMENT, 
+//				null, new Object[] { instrument_.getInstrumentCode() });	
+//		}
 		if(ValidatorUtils.isValidString(instrument_.getInstrumentCodeRolledOverFrom())) {			
 			throw MarketRuntimeException.createExceptionWithDetails(MarketRuntimeException.NEW_INSTRUMENT_MUST_NOT_HAVE_INSTRUMENT_CODE_ROLLED_FROM, 
 					null, new Object[] { instrument_.getInstrumentCode() });	

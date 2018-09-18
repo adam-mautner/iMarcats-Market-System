@@ -43,6 +43,17 @@ public interface MarketDatastore {
 			int maxNumberOfMarketsOnPage_);
 
 	/**
+	 * Finds all Market Models
+	 * @param cursorString_ Cursor String for continuing a Paged Query or Null for a new Paged Query
+	 * @param maxNumberOfMarketsOnPage_ Max Number of Markets on a Page   
+	 *
+	 * @return Paged Market List
+	 */
+	public PagedMarketList findAllMarketModelsFromCursor(
+			String cursorString_,
+			int maxNumberOfMarketsOnPage_);
+	
+	/**
 	 * Finds Market Models by Instrument 
 	 * @param instrumentCode_ Code of the Instrument
 	 * @param cursorString_ Cursor String for continuing a Paged Query or Null for a new Paged Query

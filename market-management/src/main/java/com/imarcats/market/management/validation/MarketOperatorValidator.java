@@ -42,11 +42,12 @@ public class MarketOperatorValidator {
 		
 	private static void validateNewMarketOperatorInternal(MarketOperator marketOperator_) {
 		validateMarketOperatorBasics(marketOperator_);
-		if(ValidatorUtils.isValidString(marketOperator_.getMarketOperatorAgreement())) {
-			throw MarketRuntimeException.createExceptionWithDetails(
-					MarketRuntimeException.NEW_MARKET_OPERATOR_MUST_NOT_HAVE_MARKET_OPERATOR_AGREEMENT, 
-					null, new Object[] { marketOperator_.getCode() });
-		}
+		// we have removed this check to make market operator creation single step 
+//		if(ValidatorUtils.isValidString(marketOperator_.getMarketOperatorAgreement())) {
+//			throw MarketRuntimeException.createExceptionWithDetails(
+//					MarketRuntimeException.NEW_MARKET_OPERATOR_MUST_NOT_HAVE_MARKET_OPERATOR_AGREEMENT, 
+//					null, new Object[] { marketOperator_.getCode() });
+//		}
 		if(marketOperator_.getActivationStatus() != null && marketOperator_.getActivationStatus() != ActivationStatus.Created) {
 			throw MarketRuntimeException.createExceptionWithDetails(
 					MarketRuntimeException.NEW_MARKET_OPERATOR_MUST_NOT_HAVE_ACTIVATION_STATUS, 

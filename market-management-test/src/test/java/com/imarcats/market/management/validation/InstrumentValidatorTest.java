@@ -298,21 +298,23 @@ public class InstrumentValidatorTest extends ValidatorTestCaseBase {
 	public void testNewInstrumentValidation() throws Exception {
 		Instrument instrument = createInstrument("TEST");
 		
-		try {
-			InstrumentValidator.validateNewInstrument(instrument);
-			fail();
-		} catch (MarketRuntimeException e) {
-			assertEquals(ExceptionLanguageKeys.NEW_INSTRUMENT_MUST_NOT_HAVE_ASSET_CLASS_NAME, e.getLanguageKey());
-		}
-		instrument.setAssetClassName(null);
+		// we have removed this check to make instrument creation single step 
+//		try {
+//			InstrumentValidator.validateNewInstrument(instrument);
+//			fail();
+//		} catch (MarketRuntimeException e) {
+//			assertEquals(ExceptionLanguageKeys.NEW_INSTRUMENT_MUST_NOT_HAVE_ASSET_CLASS_NAME, e.getLanguageKey());
+//		}
+//		instrument.setAssetClassName(null);
 
-		try {
-			InstrumentValidator.validateNewInstrument(instrument);
-			fail();
-		} catch (MarketRuntimeException e) {
-			assertEquals(ExceptionLanguageKeys.NEW_INSTRUMENT_MUST_NOT_HAVE_MASTER_AGREEMENT_DOCUMENT, e.getLanguageKey());
-		}
-		instrument.setMasterAgreementDocument(null);
+		// we have removed this check to make instrument creation single step 
+//		try {
+//			InstrumentValidator.validateNewInstrument(instrument);
+//			fail();
+//		} catch (MarketRuntimeException e) {
+//			assertEquals(ExceptionLanguageKeys.NEW_INSTRUMENT_MUST_NOT_HAVE_MASTER_AGREEMENT_DOCUMENT, e.getLanguageKey());
+//		}
+//		instrument.setMasterAgreementDocument(null);
 		
 		try {
 			InstrumentValidator.validateNewInstrument(instrument);

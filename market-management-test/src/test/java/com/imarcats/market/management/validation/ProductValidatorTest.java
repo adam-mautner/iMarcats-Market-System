@@ -214,13 +214,14 @@ public class ProductValidatorTest extends ValidatorTestCaseBase {
 		product.setProductCodeRolledOverFrom(null);
 				
 		product.setProductDefinitionDocument("TestDef");
-		try {
-			ProductValidator.validateNewProduct(product);
-			fail();
-		} catch (MarketRuntimeException e) {
-			assertEquals(ExceptionLanguageKeys.NEW_PRODUCT_MUST_NOT_HAVE_DEFINITION_DOCUMENT, e.getLanguageKey());
-		}
-		product.setProductDefinitionDocument(null);
+		// we have removed this check to make product creation single step 
+//		try {
+//			ProductValidator.validateNewProduct(product);
+//			fail();
+//		} catch (MarketRuntimeException e) {
+//			assertEquals(ExceptionLanguageKeys.NEW_PRODUCT_MUST_NOT_HAVE_DEFINITION_DOCUMENT, e.getLanguageKey());
+//		}
+//		product.setProductDefinitionDocument(null);
 		
 		product.setCreationAudit(new AuditInformation());
 		try {

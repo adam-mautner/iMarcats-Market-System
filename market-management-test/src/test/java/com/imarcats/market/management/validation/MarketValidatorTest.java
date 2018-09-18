@@ -166,14 +166,15 @@ public class MarketValidatorTest extends MarketObjectTestBase {
 		}		
 		market.setHaltLevel(-1);
 
-		try {
-			MarketValidator.validateNewMarket(market);
-			fail();
-		} catch (MarketSecurityException e) {
-			assertEquals(ExceptionLanguageKeys.USER_TRIED_TO_SET_A_SYSTEM_CONTROLLED_PROPERTY, e.getLanguageKey());
-			assertEquals(MarketPropertyNames.MARKET_OPERATOR_CONTRACT_PROPERTY, e.getRelatedObjects()[1]);
-		}		
-		market.setMarketOperationContract(null);
+		// we have removed this check to make market creation single step 
+//		try {
+//			MarketValidator.validateNewMarket(market);
+//			fail();
+//		} catch (MarketSecurityException e) {
+//			assertEquals(ExceptionLanguageKeys.USER_TRIED_TO_SET_A_SYSTEM_CONTROLLED_PROPERTY, e.getLanguageKey());
+//			assertEquals(MarketPropertyNames.MARKET_OPERATOR_CONTRACT_PROPERTY, e.getRelatedObjects()[1]);
+//		}		
+//		market.setMarketOperationContract(null);
 		
 		try {
 			MarketValidator.validateNewMarket(market);

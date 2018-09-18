@@ -109,11 +109,12 @@ public class MarketValidator {
 					MarketSecurityException.USER_TRIED_TO_SET_A_SYSTEM_CONTROLLED_PROPERTY, 
 					null, new Object[] { market_, MarketPropertyNames.HALT_LEVEL_PROPERTY });
 		}
-		if(market_.getMarketOperationContract() != null) {
-			throw MarketSecurityException.createExceptionWithDetails(
-					MarketSecurityException.USER_TRIED_TO_SET_A_SYSTEM_CONTROLLED_PROPERTY, 
-					null, new Object[] { market_, MarketPropertyNames.MARKET_OPERATOR_CONTRACT_PROPERTY });
-		}
+		// we have removed this check to make market creation single step 
+//		if(market_.getMarketOperationContract() != null) {
+//			throw MarketSecurityException.createExceptionWithDetails(
+//					MarketSecurityException.USER_TRIED_TO_SET_A_SYSTEM_CONTROLLED_PROPERTY, 
+//					null, new Object[] { market_, MarketPropertyNames.MARKET_OPERATOR_CONTRACT_PROPERTY });
+//		}
 		if(market_.getCurrentBestBid() != null) {
 			throw MarketSecurityException.createExceptionWithDetails(
 					MarketSecurityException.USER_TRIED_TO_SET_A_SYSTEM_CONTROLLED_PROPERTY, 

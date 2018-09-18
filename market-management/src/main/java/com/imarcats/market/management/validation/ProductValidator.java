@@ -52,9 +52,10 @@ public class ProductValidator {
 		if(product_.getActivationStatus() != null && product_.getActivationStatus() != ActivationStatus.Created) {
 			throw MarketRuntimeException.createExceptionWithDetails(MarketRuntimeException.NEW_PRODUCT_MUST_NOT_HAVE_ACTIVATION_STATUS, null, new Object[] { product_.getProductCode() });
 		}
-		if(ValidatorUtils.isValidString(product_.getProductDefinitionDocument())) {
-			throw MarketRuntimeException.createExceptionWithDetails(MarketRuntimeException.NEW_PRODUCT_MUST_NOT_HAVE_DEFINITION_DOCUMENT, null, new Object[] { product_.getProductCode() });
-		}
+		// we have removed this check to make product creation single step 
+//		if(ValidatorUtils.isValidString(product_.getProductDefinitionDocument())) {
+//			throw MarketRuntimeException.createExceptionWithDetails(MarketRuntimeException.NEW_PRODUCT_MUST_NOT_HAVE_DEFINITION_DOCUMENT, null, new Object[] { product_.getProductCode() });
+//		}
 		if(product_.getCreationAudit() != null) {
 			throw MarketRuntimeException.createExceptionWithDetails(MarketRuntimeException.NEW_PRODUCT_MUST_NOT_HAVE_CREATION_AUDIT, null, new Object[] { product_.getProductCode() });
 		}

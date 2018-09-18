@@ -41,6 +41,17 @@ public interface MarketOperatorDatastore {
 			int maxNumberOfMarketOperatorsOnPage_);
 
 	/**
+	 * Finds all Market Operators
+	 * @param cursorString_ Cursor String for continuing a Paged Query or Null for a new Paged Query
+	 * @param maxNumberOfMarketOperatorsOnPage_ Max Number of Market Operators on a Page   
+	 *
+	 * @return Paged Market Operator List
+	 */
+	public PagedMarketOperatorList findAllMarketOperatorsFromCursor(String cursorString_, 
+			int maxNumberOfMarketOperatorsOnPage_);
+	
+	
+	/**
 	 * Finds Market Operator by Business Entity
 	 * @param businessEntityCode_ Code of the Business Entity 
 	 *
