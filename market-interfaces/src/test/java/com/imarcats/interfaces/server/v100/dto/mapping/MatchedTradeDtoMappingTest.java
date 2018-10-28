@@ -5,10 +5,10 @@ import com.imarcats.interfaces.client.v100.dto.types.PagedMatchedTradeSideListDt
 import com.imarcats.interfaces.client.v100.dto.types.TradeSideDto;
 import com.imarcats.interfaces.server.v100.dto.mapping.MatchedTradeDtoMapping;
 import com.imarcats.model.MatchedTrade;
+import com.imarcats.model.TradeSide;
 import com.imarcats.model.test.testutils.MarketObjectTestBase;
 import com.imarcats.model.types.PagedMatchedTradeSideList;
 import com.imarcats.model.types.Quote;
-import com.imarcats.model.types.TradeSide;
 
 public class MatchedTradeDtoMappingTest extends MarketObjectTestBase {
 	public void testRoundTripMappingTradeSide() throws Exception {

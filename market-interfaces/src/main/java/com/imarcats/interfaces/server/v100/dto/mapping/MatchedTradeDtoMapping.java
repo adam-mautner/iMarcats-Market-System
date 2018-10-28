@@ -4,8 +4,8 @@ import com.imarcats.interfaces.client.v100.dto.MatchedTradeDto;
 import com.imarcats.interfaces.client.v100.dto.types.PagedMatchedTradeSideListDto;
 import com.imarcats.interfaces.client.v100.dto.types.TradeSideDto;
 import com.imarcats.model.MatchedTrade;
+import com.imarcats.model.TradeSide;
 import com.imarcats.model.types.PagedMatchedTradeSideList;
-import com.imarcats.model.types.TradeSide;
 
 public class MatchedTradeDtoMapping extends DtoMappingBase {
 	public static MatchedTradeDtoMapping INSTANCE = new MatchedTradeDtoMapping();

@@ -16,7 +16,6 @@ import com.imarcats.model.meta.DataLengths;
 import com.imarcats.model.types.OrderSide;
 import com.imarcats.model.types.Quote;
 import com.imarcats.model.types.TradeSettlementState;
-import com.imarcats.model.types.TradeSide;
 
 /**
  * Two Orders that can make up a Trade  

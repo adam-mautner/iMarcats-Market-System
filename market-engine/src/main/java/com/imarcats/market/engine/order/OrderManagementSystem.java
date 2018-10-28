@@ -27,6 +27,7 @@ import com.imarcats.internal.server.interfaces.order.OrderInternal;
 import com.imarcats.model.Instrument;
 import com.imarcats.model.Order;
 import com.imarcats.model.OrderPropertyNames;
+import com.imarcats.model.TradeSide;
 import com.imarcats.model.mutators.ClientOrderMutator;
 import com.imarcats.model.mutators.DuplicatePropertyException;
 import com.imarcats.model.mutators.PropertyChange;
@@ -45,7 +46,6 @@ import com.imarcats.model.types.PagedMatchedTradeSideList;
 import com.imarcats.model.types.PagedOrderList;
 import com.imarcats.model.types.PropertyHolder;
 import com.imarcats.model.types.QuoteType;
-import com.imarcats.model.types.TradeSide;
 import com.imarcats.model.types.TriggerProperties;
 
 /**

@@ -5,8 +5,8 @@ import java.util.Date;
 import com.imarcats.interfaces.server.v100.order.OrderInterface;
 import com.imarcats.internal.server.interfaces.market.MarketInternal;
 import com.imarcats.model.Order;
+import com.imarcats.model.TradeSide;
 import com.imarcats.model.types.Quote;
-import com.imarcats.model.types.TradeSide;
 
 /**
  * Internal Functionality of the Order

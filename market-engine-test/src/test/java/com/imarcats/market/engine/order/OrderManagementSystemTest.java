@@ -26,6 +26,7 @@ import com.imarcats.model.Market;
 import com.imarcats.model.MatchedTrade;
 import com.imarcats.model.Order;
 import com.imarcats.model.OrderPropertyNames;
+import com.imarcats.model.TradeSide;
 import com.imarcats.model.mutators.PropertyChange;
 import com.imarcats.model.mutators.PropertyListValueChange;
 import com.imarcats.model.mutators.PropertyValueChange;
@@ -44,7 +45,6 @@ import com.imarcats.model.types.PagedOrderList;
 import com.imarcats.model.types.Quote;
 import com.imarcats.model.types.QuoteAndSize;
 import com.imarcats.model.types.QuoteType;
-import com.imarcats.model.types.TradeSide;
 
 /**
  * Test functionality of Order Management System 

@@ -50,6 +50,7 @@ import com.imarcats.model.Market;
 import com.imarcats.model.MarketOperator;
 import com.imarcats.model.MatchedTrade;
 import com.imarcats.model.Product;
+import com.imarcats.model.TradeSide;
 import com.imarcats.model.test.testutils.MarketObjectTestBase;
 import com.imarcats.model.types.ActivationStatus;
 import com.imarcats.model.types.AuditEntryAction;
@@ -63,7 +64,6 @@ import com.imarcats.model.types.RecurringActionDetail;
 import com.imarcats.model.types.SettlementPrice;
 import com.imarcats.model.types.SettlementType;
 import com.imarcats.model.types.TimeOfDay;
-import com.imarcats.model.types.TradeSide;
 import com.imarcats.model.types.UnderlyingType;
 
 public abstract class ManagementTestBase extends MarketObjectTestBase {

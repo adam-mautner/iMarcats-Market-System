@@ -1,4 +1,4 @@
-package com.imarcats.model.types;
+package com.imarcats.model;
 
 import java.sql.Timestamp;
 import java.util.Date;
@@ -16,9 +16,16 @@ import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
-import com.imarcats.model.MarketModelObject;
-import com.imarcats.model.MatchedTrade;
 import com.imarcats.model.meta.DataLengths;
+import com.imarcats.model.types.OrderQuote;
+import com.imarcats.model.types.OrderSide;
+import com.imarcats.model.types.OrderType;
+import com.imarcats.model.types.Property;
+import com.imarcats.model.types.PropertyHolder;
+import com.imarcats.model.types.Quote;
+import com.imarcats.model.types.TradeProperties;
+import com.imarcats.model.types.TradeQuote;
+import com.imarcats.model.types.TradeSettlementState;
 
 
 /**

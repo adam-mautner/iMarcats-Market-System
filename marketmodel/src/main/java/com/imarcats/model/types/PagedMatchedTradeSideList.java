@@ -3,6 +3,8 @@ package com.imarcats.model.types;
 import java.io.Serializable;
 import java.util.Arrays;
 
+import com.imarcats.model.TradeSide;
+
 
 /**
  * Paged List of Matched Trades Sides

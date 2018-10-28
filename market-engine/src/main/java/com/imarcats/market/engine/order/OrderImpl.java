@@ -16,6 +16,7 @@ import com.imarcats.internal.server.interfaces.order.OrderInternal;
 import com.imarcats.internal.server.interfaces.order.OrderManagementContext;
 import com.imarcats.model.Order;
 import com.imarcats.model.OrderPropertyNames;
+import com.imarcats.model.TradeSide;
 import com.imarcats.model.types.AuditInformation;
 import com.imarcats.model.types.Property;
 import com.imarcats.model.types.OrderExpirationInstruction;
@@ -24,7 +25,6 @@ import com.imarcats.model.types.OrderState;
 import com.imarcats.model.types.OrderTriggerInstruction;
 import com.imarcats.model.types.OrderType;
 import com.imarcats.model.types.Quote;
-import com.imarcats.model.types.TradeSide;
 import com.imarcats.model.utils.PropertyUtils;
 
 /**

@@ -1,8 +1,8 @@
 package com.imarcats.internal.server.infrastructure.datastore;
 
 import com.imarcats.model.MatchedTrade;
+import com.imarcats.model.TradeSide;
 import com.imarcats.model.types.PagedMatchedTradeSideList;
-import com.imarcats.model.types.TradeSide;
 
 /**
  * Data Access Object (DAO), which stores all the Matched Trades in the System. 

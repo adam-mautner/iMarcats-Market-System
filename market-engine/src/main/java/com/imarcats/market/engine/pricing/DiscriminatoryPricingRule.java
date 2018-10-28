@@ -6,11 +6,11 @@ import com.imarcats.internal.server.interfaces.market.MarketInternal;
 import com.imarcats.internal.server.interfaces.order.OrderManagementContext;
 import com.imarcats.market.engine.market.MarketUtils;
 import com.imarcats.model.MatchedTrade;
+import com.imarcats.model.TradeSide;
 import com.imarcats.model.types.OrderSide;
 import com.imarcats.model.types.OrderType;
 import com.imarcats.model.types.Quote;
 import com.imarcats.model.types.QuoteAndSize;
-import com.imarcats.model.types.TradeSide;
 
 /**
  * All Trades take place at Price of the Standing Order

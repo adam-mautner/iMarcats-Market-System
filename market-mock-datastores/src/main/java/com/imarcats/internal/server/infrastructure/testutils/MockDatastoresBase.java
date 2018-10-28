@@ -35,6 +35,7 @@ import com.imarcats.model.MarketOperator;
 import com.imarcats.model.MatchedTrade;
 import com.imarcats.model.Order;
 import com.imarcats.model.Product;
+import com.imarcats.model.TradeSide;
 import com.imarcats.model.test.testutils.MockIdentityGenerator;
 import com.imarcats.model.types.ActivationStatus;
 import com.imarcats.model.types.AuditInformation;
@@ -61,7 +62,6 @@ import com.imarcats.model.types.QuoteType;
 import com.imarcats.model.types.SecondaryOrderPrecedenceRuleType;
 import com.imarcats.model.types.TimeOfDay;
 import com.imarcats.model.types.TimePeriod;
-import com.imarcats.model.types.TradeSide;
 import com.imarcats.model.types.TradingSession;
 import com.imarcats.model.types.UnderlyingType;
 
