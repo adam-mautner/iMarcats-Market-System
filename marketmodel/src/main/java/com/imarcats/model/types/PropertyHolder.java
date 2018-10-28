@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -34,62 +35,72 @@ public class PropertyHolder implements MarketModelObject {
 	
 	// TODO: Use explicit ordering clause ! (Find out, why this is not working) - We expect that this list will be short and will not be changed frequently, so it is OK for now to not sort it
 	// TODO: @Order(extensions = @Extension(vendorName="datanucleus", key="list-ordering", value="_name asc"))
-	@Column(name="INT_PROPERTIES")
+//	@Column(name="INT_PROPERTIES")
 	@OneToMany(cascade=CascadeType.ALL, orphanRemoval=true)
+	@JoinColumn(name = "PROPERTY_HOLDER_ID", nullable = false) 
 	private List<IntProperty> _intProperties = new ArrayList<IntProperty>();
 
 	// TODO: Use explicit ordering clause ! (Find out, why this is not working) - We expect that this list will be short and will not be changed frequently, so it is OK for now to not sort it
 	// TODO: @Order(extensions = @Extension(vendorName="datanucleus", key="list-ordering", value="_name asc"))
-	@Column(name="DOUBLE_PROPERTIES")
+//	@Column(name="DOUBLE_PROPERTIES")
 	@OneToMany(cascade=CascadeType.ALL, orphanRemoval=true)
+	@JoinColumn(name = "PROPERTY_HOLDER_ID", nullable = false) 
 	private List<DoubleProperty> _doubleProperties = new ArrayList<DoubleProperty>();
 
 	// TODO: Use explicit ordering clause ! (Find out, why this is not working) - We expect that this list will be short and will not be changed frequently, so it is OK for now to not sort it
 	// TODO: @Order(extensions = @Extension(vendorName="datanucleus", key="list-ordering", value="_name asc"))
-	@Column(name="STRING_PROPERTIES")
+//	@Column(name="STRING_PROPERTIES")
 	@OneToMany(cascade=CascadeType.ALL, orphanRemoval=true)
+	@JoinColumn(name = "PROPERTY_HOLDER_ID", nullable = false) 
 	private List<StringProperty> _stringProperties = new ArrayList<StringProperty>();
 
 	// TODO: Use explicit ordering clause ! (Find out, why this is not working) - We expect that this list will be short and will not be changed frequently, so it is OK for now to not sort it
 	// TODO: @Order(extensions = @Extension(vendorName="datanucleus", key="list-ordering", value="_name asc"))
-	@Column(name="BOOLEAN_PROPERTIES")
+//	@Column(name="BOOLEAN_PROPERTIES")
 	@OneToMany(cascade=CascadeType.ALL, orphanRemoval=true)
+	@JoinColumn(name = "PROPERTY_HOLDER_ID", nullable = false) 
 	private List<BooleanProperty> _booleanProperties = new ArrayList<BooleanProperty>();
 
 	// TODO: Use explicit ordering clause ! (Find out, why this is not working) - We expect that this list will be short and will not be changed frequently, so it is OK for now to not sort it
 	// TODO: @Order(extensions = @Extension(vendorName="datanucleus", key="list-ordering", value="_name asc"))
-	@Column(name="DATE_PROPERTIES")
+//	@Column(name="DATE_PROPERTIES")
 	@OneToMany(cascade=CascadeType.ALL, orphanRemoval=true)
+	@JoinColumn(name = "PROPERTY_HOLDER_ID", nullable = false) 
 	private List<DateProperty> _dateProperties = new ArrayList<DateProperty>();
 
 	// TODO: Use explicit ordering clause ! (Find out, why this is not working) - We expect that this list will be short and will not be changed frequently, so it is OK for now to not sort it
 	// TODO: @Order(extensions = @Extension(vendorName="datanucleus", key="list-ordering", value="_name asc"))
-	@Column(name="DATE_RANGE_PROPERTIES")
+//	@Column(name="DATE_RANGE_PROPERTIES")
 	@OneToMany(cascade=CascadeType.ALL, orphanRemoval=true)
+	@JoinColumn(name = "PROPERTY_HOLDER_ID", nullable = false) 
 	private List<DateRangeProperty> _dateRangeProperties = new ArrayList<DateRangeProperty>();
 	
 	// TODO: Use explicit ordering clause ! (Find out, why this is not working) - We expect that this list will be short and will not be changed frequently, so it is OK for now to not sort it
 	// TODO: @Order(extensions = @Extension(vendorName="datanucleus", key="list-ordering", value="_name asc"))
-	@Column(name="TIME_PROPERTIES")
+//	@Column(name="TIME_PROPERTIES")
 	@OneToMany(cascade=CascadeType.ALL, orphanRemoval=true)
+	@JoinColumn(name = "PROPERTY_HOLDER_ID", nullable = false) 
 	private List<TimeProperty> _timeProperties = new ArrayList<TimeProperty>();
 
 	// TODO: Use explicit ordering clause ! (Find out, why this is not working) - We expect that this list will be short and will not be changed frequently, so it is OK for now to not sort it
 	// TODO: @Order(extensions = @Extension(vendorName="datanucleus", key="list-ordering", value="_name asc"))
-	@Column(name="TIME_RANGE_PROPERTIES")
+//	@Column(name="TIME_RANGE_PROPERTIES")
 	@OneToMany(cascade=CascadeType.ALL, orphanRemoval=true)
+	@JoinColumn(name = "PROPERTY_HOLDER_ID", nullable = false) 
 	private List<TimeRangeProperty> _timeRangeProperties = new ArrayList<TimeRangeProperty>();
 	
 	// TODO: Use explicit ordering clause ! (Find out, why this is not working) - We expect that this list will be short and will not be changed frequently, so it is OK for now to not sort it
 	// TODO: @Order(extensions = @Extension(vendorName="datanucleus", key="list-ordering", value="_name asc"))
-	@Column(name="UNIT_PROPERTIES")
+//	@Column(name="UNIT_PROPERTIES")
 	@OneToMany(cascade=CascadeType.ALL, orphanRemoval=true)
+	@JoinColumn(name = "PROPERTY_HOLDER_ID", nullable = false) 
 	private List<UnitProperty> _unitProperties = new ArrayList<UnitProperty>();
 	
 	// TODO: Use explicit ordering clause ! (Find out, why this is not working) - We expect that this list will be short and will not be changed frequently, so it is OK for now to not sort it
 	// TODO: @Order(extensions = @Extension(vendorName="datanucleus", key="list-ordering", value="_name asc"))
-	@Column(name="STRING_LIST_PROPERTIES")
+//	@Column(name="STRING_LIST_PROPERTIES")
 	@OneToMany(cascade=CascadeType.ALL, orphanRemoval=true)
+	@JoinColumn(name = "PROPERTY_HOLDER_ID", nullable = false) 
 	private List<StringListProperty> _stringListProperties = new ArrayList<StringListProperty>();
 	
 	@SuppressWarnings("unchecked")
