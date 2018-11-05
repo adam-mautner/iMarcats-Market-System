@@ -131,6 +131,14 @@ public class MarketOperatorDto implements ActivatableMarketObjectDto {
 		_code = code_;
 	}
 
+	public String getMarketOperatorCode() {
+		return _code;
+	}
+
+	public void setMarketOperatorCode(String code_) {
+		_code = code_;
+	}
+	
 	public String getDescription() {
 		return _description;
 	}
