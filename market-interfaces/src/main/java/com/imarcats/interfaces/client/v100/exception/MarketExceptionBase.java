@@ -1,5 +1,8 @@
 package com.imarcats.interfaces.client.v100.exception;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 import com.imarcats.interfaces.client.v100.messages.response.ExceptionMessage;
 import com.imarcats.interfaces.client.v100.messages.response.ExceptionMessageType;
 
@@ -30,12 +33,20 @@ public abstract class MarketExceptionBase extends RuntimeException {
 	}
 	
 	protected MarketExceptionBase(String languageKey_, ExceptionType exceptionType_, String messageInLog_, Throwable cause_, Object[] relatedObjects_) {
-		super(messageInLog_, cause_);
+		super(messageInLog_ + relatedObjectsToString(relatedObjects_), cause_);
 		_languageKey = languageKey_;
 		_exceptionType = exceptionType_;
 		_relatedObjects = relatedObjects_;
 	}
 
+	private static String relatedObjectsToString(Object[] relatedObjects) {
+		String relatedObjectsStr = "";
+		if(relatedObjects != null) {
+			relatedObjectsStr = " [" + Arrays.asList(relatedObjects).stream().filter(o -> o != null).map(Object::toString).collect(Collectors.joining(","))+ "]";
+		}
+		
+		return relatedObjectsStr;
+	}
 	protected MarketExceptionBase(String languageKey_, ExceptionType exceptionType_, String messageInLog_) {
 		this(languageKey_, exceptionType_, messageInLog_, null, null);
 	}
