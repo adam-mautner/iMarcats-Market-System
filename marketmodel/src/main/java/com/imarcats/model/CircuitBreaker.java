@@ -10,11 +10,12 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.imarcats.model.types.TransferableObject;
 import com.imarcats.model.types.OrderRejectAction;
+import com.imarcats.model.types.TransferableObject;
 
 /**
  * Defines the Circuit Breaker of the Market. Circuit Breaker prevents 
@@ -46,8 +47,9 @@ public class CircuitBreaker implements MarketModelObject, TransferableObject {
 	 * Optional
 	 */
 	// TODO: We need to keep the original order of the entries here, as sorting them requires a complex logic
-	@Column(name="HALT_RULE")
+//	@Column(name="HALT_RULE")
 	@OneToMany(cascade=CascadeType.ALL, orphanRemoval=true) 
+	@JoinColumn(name = "CIRCUIT_BREAKER_ID", nullable = false) 
     private List<HaltRule> _haltRules = new ArrayList<HaltRule>();
 	
 	/**

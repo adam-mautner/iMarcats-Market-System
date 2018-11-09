@@ -11,6 +11,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Version;
@@ -46,8 +47,9 @@ public class BuyBook implements OrderBookModel {
 	 * 		 because collection is ordered by a comparator, which is hard to reproduce 
 	 * 		 as an ordering clause.
 	 */	// We need to keep the original order of the entries here, as sorting them requires a complex logic
-	@Column(name="ORDER_BOOK_ENTRIES")
+//	@Column(name="ORDER_BOOK_ENTRIES")
 	@OneToMany(cascade=CascadeType.ALL, orphanRemoval=true) 
+	@JoinColumn(name = "BUY_BOOK_ID", nullable = false) 
 	private List<BuyOrderBookEntry> _orderBookEntries = new ArrayList<BuyOrderBookEntry>();
 
 	/**

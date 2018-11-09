@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 import com.imarcats.model.MarketModelObject;
@@ -25,8 +25,9 @@ public class BusinessCalendar implements MarketModelObject, TransferableObject {
 	 */
 	// TODO: Use explicit ordering clause ! (Find out, why this is not working) - We expect that this list will be short and will not be changed frequently, so it is OK for now to not sort it
 	// @Order(extensions = @Extension(vendorName="datanucleus", key="list-ordering", value="_dateString asc"))
-	@Column(name="BUSINESS_CALENDAR_DAYS")
+//	@Column(name="BUSINESS_CALENDAR_DAYS")
 	@OneToMany(cascade=CascadeType.ALL, orphanRemoval=true) 
+	@JoinColumn(name = "BUSINESS_CALENDAR_ID", nullable = false) 
 	private List<BusinessCalendarDay> _businessCalendarDays = new ArrayList<BusinessCalendarDay>();
 
     public static BusinessCalendar create(BusinessCalendar calendar_) {
