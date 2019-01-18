@@ -48,7 +48,7 @@ public interface OrderDatastore {
 	public OrderInternal[] findNonActiveOrdersOnMarket(String marketCode_);
 
 	/**
-	 * Find all Active (Submitted or WaitingSubmit) Orders for a Market 
+	 * Find all Active (PendingSubmit, Submitted or WaitingSubmit) Orders for a Market 
 	 * @param marketCode_ Market, where the Orders are
 	 *
 	 * @return Active Orders 
