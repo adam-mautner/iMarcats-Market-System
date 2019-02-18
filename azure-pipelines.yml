@@ -6,6 +6,13 @@
 pool:
   vmImage: 'Ubuntu 16.04'
 
+# Download Secure File
+# Download a secure file to a temporary location on the build or release agent
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: settings.xml
+    script: | cp ./settings.xml ${HOME}/.m2/settings.xml
+
 steps:
 - task: Maven@3
   inputs:
@@ -16,4 +23,4 @@ steps:
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
-    goals: 'install'
+    goals: 'deploy'

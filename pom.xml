@@ -21,11 +21,11 @@
   </properties>
   
   <repositories>
-    <!-- other repositories -->
     <repository>
         <id>smartgwt</id>
         <url>http://www.smartclient.com/maven2</url>
     </repository>
+    <!-- other repositories -->
     <repository>
     	<id>spring-milestones</id>
    		<url>http://repo.spring.io/libs-milestone/</url>
@@ -35,6 +35,20 @@
 	 	<url>http://clojars.org/repo</url>
   	</repository>
   </repositories>
+  <distributionManagement>
+    <!-- Copy this section from the Maven section of the "Connect to Feed" dialog -->
+    <repository>
+        <id>dev-azure-com-imarcats-imarcats-market-system</id>
+        <url>https://pkgs.dev.azure.com/iMarcats/_packaging/iMarcats-Market-System/maven/v1</url>
+        <releases>
+            <enabled>true</enabled>
+        </releases>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+    </repository>
+  </distributionManagement>
+
   
   <modules>
     <module>marketmodel</module>
