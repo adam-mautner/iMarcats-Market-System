@@ -12,7 +12,7 @@ steps:
 # Download a secure file to a temporary location on the build or release agent
 - task: DownloadSecureFile@1
   inputs:
-    secureFile: settingsxml
+    secureFile: settings.xml
 - powershell:  New-Item -Type Directory -Force "${HOME}/.m2" | Copy-Item -Force "$(settingsxml.secureFilePath)" "${HOME}/.m2/settings.xml"
 - task: Maven@3
   inputs:
