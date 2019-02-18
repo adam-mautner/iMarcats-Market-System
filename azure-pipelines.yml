@@ -11,7 +11,7 @@ pool:
 - task: DownloadSecureFile@1
   inputs:
     secureFile: settings.xml
-    script: | cp ./settings.xml ${HOME}/.m2/settings.xml
+- script: | cp ./settings.xml ${HOME}/.m2/settings.xml
 
 steps:
 - task: Maven@3
