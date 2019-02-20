@@ -5,45 +5,41 @@
   <!-- TODO: Make sure tests run automatically on build -->
 
   <artifactId>market-engine-test</artifactId>
-  <version>${imarcats.market.system.version}</version>
+  <version>1.0.0-SNAPSHOT</version>  
   <packaging>jar</packaging>
 
   <name>Market Engine Test (Open Source)</name>
   
   <parent>
-	  <groupId>com.imarcats.opensource</groupId>
-	  <artifactId>market-system</artifactId>
-	  <version>1.0.0</version>
+        <groupId>com.imarcats.opensource</groupId>
+	<artifactId>market-system</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
   </parent>
+  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
   <dependencies>
     <dependency>
-	  <groupId>com.imarcats.opensource</groupId>
-	  <artifactId>marketmodel</artifactId>
-	  <version>${project.version}</version>
+        <groupId>${project.groupId}</groupId>
+	<artifactId>marketmodel</artifactId>
     </dependency>
-    <dependency>
-	  <groupId>com.imarcats.opensource</groupId>
-	  <artifactId>market-interfaces</artifactId>
-	  <version>${project.version}</version>
+    <dependency>  
+        <groupId>${project.groupId}</groupId>
+        <artifactId>market-interfaces</artifactId>
     </dependency>    
-    <dependency>
-	  <groupId>com.imarcats.opensource</groupId>
-	  <artifactId>market-internal-infrastructure</artifactId>
-	  <version>${project.version}</version>
+    <dependency>	
+        <groupId>${project.groupId}</groupId>  
+        <artifactId>market-internal-infrastructure</artifactId>
     </dependency>  
-    <dependency>
-	  <groupId>com.imarcats.opensource</groupId>
-	  <artifactId>market-engine</artifactId>
-	  <version>${project.version}</version>
+    <dependency>	  
+        <groupId>${project.groupId}</groupId>
+        <artifactId>market-engine</artifactId>
     </dependency>
     <dependency>
-	  <groupId>com.imarcats.opensource</groupId>
-	  <artifactId>market-test-base</artifactId>
-	  <version>${project.version}</version>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>market-test-base</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>

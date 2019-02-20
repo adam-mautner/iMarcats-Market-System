@@ -4,15 +4,13 @@
 
   <groupId>com.imarcats.opensource</groupId>
   <artifactId>market-system</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>iMarcats Market System (Open Source)</name>
   <url>http://imarcats.com</url>
   
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <imarcats.market.system.version>0.0.1-SNAPSHOT</imarcats.market.system.version>
-    
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     
@@ -49,6 +47,60 @@
     </repository>
   </distributionManagement>
 
+  <dependencyManagement>
+   <dependencies>
+    <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>marketmodel</artifactId>
+        <version>${project.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>market-interfaces</artifactId>
+        <version>${project.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>market-i18n</artifactId>
+        <version>${project.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>market-internal-infrastructure</artifactId>
+        <version>${project.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>market-engine</artifactId>
+        <version>${project.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>market-engine-test</artifactId>
+        <version>${project.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>market-management</artifactId>
+        <version>${project.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>market-management-test</artifactId>
+        <version>${project.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>market-test-base</artifactId>
+        <version>${project.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>market-mock-datastores</artifactId>
+        <version>${project.version}</version>
+    </dependency>
+   </dependencies>
+  </dependencyManagement>
   
   <modules>
     <module>marketmodel</module>
