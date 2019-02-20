@@ -3,15 +3,15 @@
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>market-internal-infrastructure</artifactId>
-  <version>${imarcats.market.system.version}</version>
+  <version>1.0.0-SNAPSHOT</version>  
   <packaging>jar</packaging>
 
   <name>Market Internal Infrastructure (Open Source)</name>
   
   <parent>
-	  <groupId>com.imarcats.opensource</groupId>
-	  <artifactId>market-system</artifactId>
-	  <version>1.0.0</version>
+        <groupId>com.imarcats.opensource</groupId>
+	<artifactId>market-system</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
   </parent>
 
   <properties>
@@ -28,19 +28,16 @@
 	    <version>1.0.0.Final</version>                    
 	</dependency>	
     <dependency>
-	  <groupId>com.imarcats.opensource</groupId>
-	  <artifactId>marketmodel</artifactId>
-	  <version>${project.version}</version>
+	  <groupId>${project.groupId}</groupId>
+	  <artifactId>marketmodel</artifactId>	  
     </dependency>
      <dependency>
-	  <groupId>com.imarcats.opensource</groupId>
+	  <groupId>${project.groupId}</groupId>
 	  <artifactId>market-interfaces</artifactId>
-	  <version>${project.version}</version>
     </dependency>
      <dependency>
-	  <groupId>com.imarcats.opensource</groupId>
+	  <groupId>${project.groupId}</groupId>
 	  <artifactId>market-i18n</artifactId>
-	  <version>${project.version}</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
