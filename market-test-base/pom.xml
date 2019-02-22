@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>market-test-base</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <packaging>jar</packaging>
 
   <name>Market Test Base (Open Source)</name>
@@ -11,7 +11,7 @@
   <parent>
         <groupId>com.imarcats.opensource</groupId>
 	<artifactId>market-system</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
   </parent>
 
   <properties>
