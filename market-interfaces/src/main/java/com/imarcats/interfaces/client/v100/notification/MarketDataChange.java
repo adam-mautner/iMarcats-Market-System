@@ -23,7 +23,11 @@ public class MarketDataChange extends ListenerCallUserParameters {
 	
 	private long _quoteChangeDate;
 	private ObjectVersion _version;
-	
+		
+	public MarketDataChange() {
+		super();
+	}
+
 	public MarketDataChange(String marketCode_, MarketDataType changeType_, QuoteDto newQuote_, Date changeDate_, ObjectVersion version_) {
 		_marketCode = marketCode_;
 		_changeType = changeType_;
@@ -72,6 +76,26 @@ public class MarketDataChange extends ListenerCallUserParameters {
 		quote.setValidQuote(_newQuoteValid);
 		
 		return quote;
+	}
+
+	public void setNewQuoteAndSize(QuoteAndSizeDto quote) {
+		if (quote != null) {			
+			setNewQuote(quote.getQuote());
+			_newQuoteSize = quote.getSize();
+		} else {
+			setNewQuote(null);
+			_newQuoteSize = 0;
+		}
+	}
+	
+	public void setNewQuote(QuoteDto quote) {
+		if (quote != null) {			
+			_newQuoteValid = quote.getValidQuote();
+			_newQuoteValue = quote.getQuoteValue();
+		} else {
+			_newQuoteValid = false;
+			_newQuoteValue = 0;
+		}
 	}
 	
 	public MarketDataType getChangeType() {

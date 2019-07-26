@@ -385,6 +385,10 @@ public class OrderDto implements MarketModelObjectDto {
 		_externalOrderReference = externalOrderReference_;
 	}
 
+	public void setLastUpdateTimestamp(Date _lastUpdateTimestamp) {
+		this._lastUpdateTimestamp = _lastUpdateTimestamp;
+	}
+
 	/**
 	 * @return String used in Debug and Exceptions 
 	 */
