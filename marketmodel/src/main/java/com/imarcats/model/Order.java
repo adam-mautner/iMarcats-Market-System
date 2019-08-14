@@ -47,10 +47,11 @@ public class Order implements MarketModelObject, VersionedMarketObject {
 	/**
 	 * Primary Key of the Order
 	 * Note: No need for accessing this field directly
-	 */	
+	 */
 	@Id
 	@GeneratedValue 
 	@Column(name="ID")
+	@org.springframework.data.annotation.Id
     private Long _id;
 
 	/**

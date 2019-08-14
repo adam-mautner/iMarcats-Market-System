@@ -62,6 +62,7 @@ public class Market implements MarketModelObject, ActivatableMarketObject, Versi
 	 */
 	@Id
 	@Column(name="MARKET_CODE", unique=true, length=DataLengths.MARKET_OBJECT_CODE_LENGTH)
+	@org.springframework.data.annotation.Id
 	private String _marketCode;
 	
 	/**
